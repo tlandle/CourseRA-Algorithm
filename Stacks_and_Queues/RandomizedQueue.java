@@ -15,6 +15,7 @@
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
     
@@ -171,8 +172,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         //System.out.println(rq.to`String());
         System.out.println("items: " + rq.N);
 
-        Iterator it1 = rq.iterator();
-        Iterator it2 = rq.iterator();
+        Iterator<Integer> it1 = rq.iterator();
+        Iterator<Integer> it2 = rq.iterator();
 
         while (it1.hasNext()) {
             System.out.println(it1.next());
