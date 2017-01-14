@@ -14,7 +14,6 @@
  *----------------------------------------------------------------*/
 
 import java.util.Comparator;
-import edu.princeton.cs.algs4.LineSegment;
 import edu.princeton.cs.algs4.StdDraw;
 
 public class Point implements Comparable<Point> 
@@ -138,8 +137,21 @@ public class Point implements Comparable<Point>
     
     private class SlopeOrderComparator implements Comparator<Point>
     {
-        
-        
+        public int compare(Point firstPoint, Point secondPoint)
+        {
+            if(Point.this.slopeTo(firstPoint) < Point.this.slopeTo(secondPoint))
+            {
+                return -1;
+            }
+            else if (Point.this.slopeTo(firstPoint) < Point.this.slopeTo(secondPoint))
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 
 
