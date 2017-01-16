@@ -72,17 +72,17 @@ public class Point implements Comparable<Point>
         {
             return Double.NEGATIVE_INFINITY;
         }
-        else if(that.x-this.x == 0)
-        {
-            return 0.0;
-        }
-        else if(that.y-this.y == 0)
+        else if(this.x - that.x == 0)
         {
             return Double.POSITIVE_INFINITY;
         }
+        else if(that.y-this.y == 0)
+        {
+            return +0.0;
+        }
         else
         {
-            return ((that.y - this.y)/(that.x - this.x));
+            return ((double)(that.y - this.y)/(that.x - this.x));
         } 
     }
 
@@ -100,6 +100,10 @@ public class Point implements Comparable<Point>
      */
     public int compareTo(Point that) 
     {
+        if(that == null)
+        {
+            throw new NullPointerException();
+        }
         if (this.y > that.y)
         {
             return 1;
@@ -143,7 +147,7 @@ public class Point implements Comparable<Point>
             {
                 return -1;
             }
-            else if (Point.this.slopeTo(firstPoint) < Point.this.slopeTo(secondPoint))
+            else if (Point.this.slopeTo(firstPoint) > Point.this.slopeTo(secondPoint))
             {
                 return 1;
             }
