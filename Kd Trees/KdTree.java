@@ -71,8 +71,10 @@ public class KdTree {
    {
        if(x == null)
        {
-           return new Node(p, 
+           return new Node(p, new RectHV(0,0,1,1), null, null);
        }
+       
+       
        
    }
    
